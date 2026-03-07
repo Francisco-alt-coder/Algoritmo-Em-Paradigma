@@ -1,25 +1,11 @@
-from functools import reduce
-
-funcionarios = [
-    {"nome": "Ana", "cargo": "Desenvolvedora", "salario": 5000},
-    {"nome": "Carlos", "cargo": "Analista", "salario": 3500},
-    {"nome": "Marcos", "cargo": "Gerente", "salario": 8000},
-    {"nome": "Julia", "cargo": "Suporte", "salario": 2500}
-]
-
-valor_x = 4000
-
-# Filtrar funcionários que ganham acima do valor X
-filtrados = list(filter(lambda f: f["salario"] > valor_x, funcionarios))
-
-# Calcular bônus de cada um
-bonus = list(map(lambda f: f["salario"] * 0.10, filtrados))
-
-# Somar todos os bônus
-total_bonus = reduce(lambda total, b: total + b, bonus, 0)
-
-print("Funcionários que recebem bônus:")
-for f in filtrados:
-    print(f["nome"], "-", f["salario"])
-
-print("Total gasto com bônus:", total_bonus)
+Ao comparar os três paradigmas utilizados na resolução do problema
+é possível perceber que cada um apresenta uma forma 
+diferente de organizar a lógica do programa. O paradigma imperativo
+foi o que pareceu mais direto de entender, porque a execução acontece passo a passo
+utilizando estruturas de repetição e variáveis que vão sendo atualizadas. 
+Durante o processo. Já o paradigma orientado a objetos trouxe uma organização maior do código, 
+pois os dados e comportamentos foram agrupados em classes, como no caso da classe que representa o funcionário e seus métodos de cálculo de bônus. 
+Isso facilita a manutenção e a expansão do sistema caso ele fique maior no futuro. 
+Por outro lado, o paradigma funcional trabalha de uma forma diferente, focando na transformação dos dados por meio de funções como filtro, mapeamento e redução. 
+Apesar de ser uma abordagem mais compacta e organizada em etapas, para entender o conceito. No geral, todos os paradigmas conseguem resolver o mesmo problema, mas cada
+um apresenta uma forma distinta de estruturar a solução.
